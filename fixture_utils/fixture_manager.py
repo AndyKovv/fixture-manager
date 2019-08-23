@@ -13,12 +13,11 @@ class FixtureManager:
     fixture_class = Fixture
 
     def __init__(self):
-        self.__root_path = None
         self.__fixture_path = None
         self.__fixtures_map = dict()
 
     @classmethod
-    def build_(cls, root_fixture, fixture_path):
+    def build_(cls, fixture_path):
         """
             Method should build
             fuxture manager with
@@ -27,7 +26,6 @@ class FixtureManager:
             :fixture_path  - fixture path
         """
         instance = cls()
-        instance.__root_path = root_fixture
         instance.__fixture_path = fixture_path
         instance.autodiscover()
         return instance

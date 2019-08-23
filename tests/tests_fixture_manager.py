@@ -39,7 +39,7 @@ class TestsFixturesManager:
     def test_should_autodiscover_fixtures_in_directory(self, root, mocked_fixture_path):
         """ Check autodiscover fixture in directory"""
         self.create_fixtures(mocked_fixture_path)
-        manager = FixtureManager.build_(root, mocked_fixture_path)
+        manager = FixtureManager.build_(mocked_fixture_path)
         assert manager.fixture_one is not None
 
         assert isinstance(manager.fixture_one, Fixture)
@@ -48,7 +48,7 @@ class TestsFixturesManager:
 
     def test_should_raise_exception_if_fixture_not_found(self, root, mocked_fixture_path):
         """ Check raise exception if fixture not found """
-        manager = FixtureManager.build_(root, mocked_fixture_path)
+        manager = FixtureManager.build_(mocked_fixture_path)
         with pytest.raises(FixtureNotFound):
             assert manager.not_exist_fixture is not None
 
