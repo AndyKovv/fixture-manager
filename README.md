@@ -14,6 +14,8 @@ example_module:
 
 ```
 
+```
 from fixture_utils import FixtureManager
 manager = FixtureManager.build_(mocked_fixture_path)
 manager.fixture_one -> returns Fixture object 
+```
